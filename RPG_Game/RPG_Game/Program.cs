@@ -1,11 +1,20 @@
 ﻿namespace RPG_Game
 {
-    public class WoodenSword : Weapon
+    public class Goblin : Enemy
     {
-        public WoodenSword() : base("Дерев'яний меч", "+5 до атаки", 5)
+        public Goblin() : base(40, 8, "Гоблін", 30)
         {
+
+        }
+
+        public override void Attack(Character target)
+        {
+            var damage = Strength;
+            Console.WriteLine($"{Name} б'є кинджалом і завдає {damage} пошкоджень!");
+            target.TakeDamage(damage);
         }
     }
+
 
     internal class Program
     {
